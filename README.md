@@ -14,7 +14,7 @@
 
 **Consumer Portal:** https://medicineshield.free.je/login.php
 
-> **Recommended:** Open on Chrome or Edge for the best barcode scanning experience.
+> **Recommended:** Open on Brave or Chrome or Edge for the best barcode scanning experience.
 
 ---
 
