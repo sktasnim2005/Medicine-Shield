@@ -1,120 +1,281 @@
 # 🛡️ Medicine-Shield (Oushodh-Shield)
-### Counterfeit Drug Verification & Public Health Protection System (Bangladesh)
 
-A full-stack, AI-powered anti-counterfeit drug verification platform built for Bangladesh and global pharmaceutical security. Combines single-use cryptographic 1D Barcode Ledgers with on-device Computer Vision packaging validation (MobileNet AI).
+### AI-Powered Counterfeit Drug Verification & Public Health Protection System
 
----
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?logo=php\&logoColor=white)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql\&logoColor=white)](https://www.mysql.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript\&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js-MobileNet%20v2-FF6F00?logo=tensorflow\&logoColor=white)](https://www.tensorflow.org/js)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
 
-## 🚀 Key Features
+**Medicine-Shield** is a full-stack anti-counterfeit drug verification platform designed for **Bangladesh's pharmaceutical ecosystem**. It combines **single-use cryptographic barcode verification**, **AI-powered packaging inspection**, and **regulatory intelligence** to help consumers, pharmacies, manufacturers, and the Directorate General of Drug Administration (DGDA) combat counterfeit medicines.
 
-1. **Smart 4-Layer Anti-Counterfeit Verification**:
-   - **Layer 1 (Smart In-Store Shelf Browsing)**: Solves the retail browsing challenge. If multiple customers inspect a box on the same pharmacy shelf before buying, the system recognizes pre-purchase browsing and keeps the product **100% Genuine** without false counterfeit alarms.
-   - **Layer 2 (Post-Purchase Ownership Lock & Claim)**: Upon purchase, the consumer or pharmacy locks the cryptographic serial token into their account. This permanently retires the code in the national ledger so counterfeiters cannot reuse or refill genuine packaging.
-   - **Layer 3 (AI Spatial Velocity & Cloned Anomaly Detection)**: If a single serial code is scanned in distant cities simultaneously (e.g., Dhaka and Chittagong within minutes), the AI flags an impossible travel anomaly and triggers an automated counterfeit syndicate alert to DGDA.
-   - **Layer 4 (On-Device MobileNet AI Visual Inspector)**:
-     - Runs 100% on-device in the browser using TensorFlow.js MobileNet v2.
-     - Performs multi-factor analysis: color tone spectrum match against reference Pantone CMYK standards, typography boundary sharpness, and logo placement.
-2. **Complete Drug Information & Clinical Guidelines**:
-   - Indications / Clinical Merits
-   - Demerits / Adverse Side Effects
-   - Dosage Guidelines & Warnings
-   - Official DGDA Maximum Retail Price (MRP in BDT)
-3. **Gamified Citizen "Health Guardian" Rewards**:
-   - +50 Points for every genuine scan.
-   - +150 Points for reporting counterfeit drug shops to DGDA.
-   - Points redeemable for Mobile Recharges (Grameenphone, Banglalink, Robi) or 10% Pharmacy Vouchers.
-4. **Manufacturer Production Portal (`/manufacturer`)**:
-   - Register batches and generate bulk cryptographic Code128 barcodes.
-   - Ready-to-print industrial sticker sheets for thermal blister pack printers.
-5. **Regulatory / DGDA Command Center (`/regulatory`)**:
-   - Real-time intelligence feed and hotspot tracking for Mitford, Babubazar, Chittagong, Sylhet, etc.
-   - Incident dossier management for Police & Magistrate raids.
+## 🌐 Live Demo
+
+**Consumer Portal:** https://medicineshield.free.je/login.php
+
+> **Recommended:** Open on Chrome or Edge for the best barcode scanning experience.
 
 ---
 
-## 🛠️ Technology Stack
+## ✨ Key Features
 
-- **Backend**: Raw PHP (PHP 8.2+ / PHP 8.5+)
-- **Database**: Standard SQL (MySQL / MariaDB 8.0+ / MySQL Workbench)
-- **Frontend**: Vanilla HTML5, Modern CSS3 (Glassmorphism & Responsive Healthcare UI), JavaScript ES6+
-- **Barcode Engine**: JsBarcode 1D Code128 / EAN-13 Rendering & HTML5 BarcodeDetector / Camera Scanner
-- **AI Model**: TensorFlow.js Pre-trained MobileNet v2 + HTML5 Canvas Computer Vision
+### 🛡️ Four-Layer Anti-Counterfeit Protection
+
+#### Layer 1 — Smart In-Store Shelf Browsing
+
+* Prevents false counterfeit alerts when multiple customers inspect the same medicine before purchase.
+* Keeps genuine products verified during normal pharmacy shelf browsing.
+
+#### Layer 2 — Post-Purchase Ownership Lock
+
+* Locks the barcode to the buyer's account after purchase.
+* Permanently retires the cryptographic serial from the national ledger.
+* Prevents genuine packaging from being reused by counterfeiters.
+
+#### Layer 3 — AI Spatial Velocity Detection
+
+* Detects impossible travel scenarios.
+* Example: the same barcode appears in **Dhaka** and **Chattogram** within minutes.
+* Automatically flags suspicious activity for DGDA investigation.
+
+#### Layer 4 — On-Device AI Packaging Inspector
+
+Powered by **TensorFlow.js MobileNet v2**.
+
+The browser performs local visual verification without uploading images.
+
+Checks include:
+
+* Color tone consistency
+* Typography sharpness
+* Logo alignment
+* Packaging layout validation
 
 ---
 
-## 💻 Setup & Running with MySQL / MySQL Workbench
+## 💊 Drug Information Portal
 
-### Step 1: Database Setup in MySQL Workbench
+Every verified medicine displays:
 
-1. Open **MySQL Workbench** on your machine.
-2. Connect to your local MySQL Server (`127.0.0.1:3306`).
-3. Click **File -> Open SQL Script...** and select:
-   ```
-   /Users/tasnim/.gemini/antigravity/scratch/medicine-shield/database/schema.sql
-   ```
-4. Click the **Execute (Lightning Bolt ⚡)** button to run the script. This creates the `medicine_shield` database schema, all tables, foreign keys, and Bangladeshi pharma seed data (Square, Beximco, Incepta, Renata, ACME).
+* Indications
+* Clinical benefits
+* Side effects
+* Dosage guidance
+* Safety warnings
+* Official DGDA Maximum Retail Price (BDT)
 
-### Step 2: Start PHP Built-in Server
+---
 
-In your Terminal (or from this directory):
+## 🏆 Health Guardian Rewards
+
+Gamification encourages public participation.
+
+| Action               | Reward      |
+| -------------------- | ----------- |
+| Genuine verification | +50 points  |
+| Counterfeit report   | +150 points |
+
+Rewards can be redeemed for:
+
+* Mobile recharge
+* Pharmacy discount vouchers
+
+---
+
+## 🏭 Manufacturer Portal (`/manufacturer`)
+
+Manufacturers can:
+
+* Register production batches
+* Generate bulk Code128 barcodes
+* Produce thermal-printer-ready barcode sheets
+* Manage production records
+
+---
+
+## 🏛️ DGDA Regulatory Dashboard (`/regulatory`)
+
+Provides enforcement intelligence including:
+
+* Counterfeit hotspot tracking
+* Real-time incident feed
+* Investigation dossiers
+* Police raid support
+* Regional monitoring for Dhaka, Mitford, Babubazar, Chattogram, Sylhet, and more.
+
+---
+
+## 📸 Screenshots
+
+> Replace these with your project screenshots.
+
+* Homepage
+* Barcode Verification
+* AI Packaging Inspection
+* Manufacturer Dashboard
+* DGDA Command Center
+
+---
+
+## 🛠 Technology Stack
+
+| Component       | Technology                        |
+| --------------- | --------------------------------- |
+| Backend         | PHP 8.2+                          |
+| Database        | MySQL / MariaDB                   |
+| Database Tool   | MySQL Workbench                   |
+| Frontend        | HTML5, CSS3, JavaScript (ES6+)    |
+| Barcode         | JsBarcode + HTML5 BarcodeDetector |
+| AI              | TensorFlow.js MobileNet v2        |
+| Computer Vision | HTML5 Canvas                      |
+| UI              | Glassmorphism Responsive Design   |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-cd /Users/tasnim/.gemini/antigravity/scratch/medicine-shield
+git clone https://github.com/your-username/medicine-shield.git
+cd medicine-shield
+```
+
+### 2. Configure the Database
+
+Open **MySQL Workbench**.
+
+1. Connect to `127.0.0.1:3306`.
+2. Open:
+
+```text
+database/schema.sql
+```
+
+3. Click the **⚡ Execute** button.
+
+This creates:
+
+* `medicine_shield` database
+* Required tables
+* Foreign keys
+* Sample Bangladeshi pharmaceutical data
+
+### 3. Start the PHP Server
+
+```bash
 php -S localhost:8000
 ```
 
-Now open your web browser and navigate to:
-👉 **[http://localhost:8000](http://localhost:8000)**
+Open:
 
----
-
-## 🧪 Test Scenarios & Presets
-
-You can test every scenario directly using the built-in preset chips on the homepage:
-
-| Test Scenario | Barcode Serial | Expected System Response |
-|---|---|---|
-| **Fresh Genuine Drug** | `MS-2026-NAPA-7821A` | ✅ **Verified 100% Genuine** (Awards +50 pts, records location & time) |
-| **Fresh Genuine Drug 2** | `MS-2026-SECLO-9914C` | ✅ **Verified 100% Genuine** (Seclo 20 Omeprazole) |
-| **Duplicate / Reused Code** | `MS-2026-NAPA-DUPL-998` | ⚠️ **Duplicate Warning** (Alerts that it was scanned previously in Mitford Market, Old Dhaka) |
-| **Duplicate Reused 2** | `MS-2026-SECL-DUPL-441` | ⚠️ **Duplicate Warning** (Previously scanned in Chittagong) |
-| **Police Raid Blacklist** | `MS-2026-FAKE-RAID-001` | 🚫 **Blacklisted / Recalled Batch** (Seized in Police Raid) |
-| **Counterfeit / Invalid** | `MS-INVALID-FAKE-CODE-999`| ❌ **Unrecognized Barcode** (Prompts immediate DGDA Report) |
-
----
-
-## 📁 Project Directory Structure
-
+```text
+http://localhost:8000
 ```
+
+---
+
+## 🧪 Test Scenarios
+
+| Scenario       | Barcode                    | Expected Result        |
+| -------------- | -------------------------- | ---------------------- |
+| Genuine Drug   | `MS-2026-NAPA-7821A`       | ✅ Verified Genuine     |
+| Genuine Drug 2 | `MS-2026-SECLO-9914C`      | ✅ Verified Genuine     |
+| Duplicate      | `MS-2026-NAPA-DUPL-998`    | ⚠️ Duplicate Warning   |
+| Duplicate 2    | `MS-2026-SECL-DUPL-441`    | ⚠️ Previously Scanned  |
+| Police Raid    | `MS-2026-FAKE-RAID-001`    | 🚫 Blacklisted         |
+| Invalid Code   | `MS-INVALID-FAKE-CODE-999` | ❌ Unrecognized Barcode |
+
+---
+
+## 📂 Project Structure
+
+```text
 medicine-shield/
-├── config/
-│   └── db.php                  # Database connection (MySQL with auto-fallback)
-├── database/
-│   └── schema.sql              # MySQL Workbench ready SQL DDL & Seed script
 ├── api/
-│   ├── verify_barcode.php      # Anti-duplication cryptographic ledger verification
-│   ├── generate_barcode.php    # Batch barcode generator API
-│   ├── report_counterfeit.php  # Public counterfeit incident reporting API
-│   ├── medicines.php           # Medicine clinical catalog & MRP API
-│   ├── rewards.php             # Gamification & voucher redemption API
-│   └── analytics.php           # Regulatory hotspot analytics API
+│   ├── analytics.php
+│   ├── generate_barcode.php
+│   ├── medicines.php
+│   ├── report_counterfeit.php
+│   ├── rewards.php
+│   └── verify_barcode.php
+│
 ├── assets/
 │   ├── css/
-│   │   └── style.css           # Modern medical UI design system
-│   ├── js/
-│   │   ├── barcode_scanner.js  # Code128 rendering & camera scanner
-│   │   ├── ai_vision.js        # MobileNet v2 neural packaging inspection
-│   │   ├── rewards.js          # Points wallet & reward redemption
-│   │   └── app.js              # Application orchestrator & audio alerts
-│   └── images/
-│       └── medicines/          # Authentic packaging reference vectors
+│   ├── images/
+│   └── js/
+│
+├── config/
+│   └── db.php
+│
+├── database/
+│   └── schema.sql
+│
 ├── manufacturer/
-│   └── index.php               # Manufacturer production & barcode generator portal
+│   └── index.php
+│
 ├── regulatory/
-│   └── index.php               # DGDA enforcement dashboard & outbreak map
+│   └── index.php
+│
 ├── partials/
-│   ├── header.php              # Navigation & branding header
-│   └── footer.php              # Footer & script loaders
-├── index.php                   # Consumer verification portal
-└── README.md                   # Documentation & quickstart guide
+│   ├── footer.php
+│   └── header.php
+│
+├── index.php
+└── README.md
 ```
+
+---
+
+## 🔄 Verification Workflow
+
+```text
+Consumer scans barcode
+        │
+        ▼
+Cryptographic Verification
+        │
+        ▼
+Ownership Validation
+        │
+        ▼
+AI Packaging Inspection
+        │
+        ▼
+Risk Analysis
+        │
+        ▼
+Final Result
+(Genuine / Duplicate / Blacklisted / Counterfeit)
+```
+
+---
+
+## 🎯 Intended Impact
+
+Medicine-Shield aims to:
+
+* Reduce counterfeit medicine circulation.
+* Protect consumers.
+* Assist pharmacies.
+* Empower DGDA enforcement.
+* Improve pharmaceutical supply-chain transparency.
+* Encourage citizen participation through rewards.
+
+---
+
+## 🔮 Future Enhancements
+
+* QR + NFC hybrid verification
+* Offline Progressive Web App (PWA)
+* Blockchain-backed audit trail
+* OCR-based expiry and batch detection
+* Multi-language support (Bangla & English)
+* Hospital and pharmacy API integration
+
+---
+
+## 👨‍💻 Author
+
+**Sk Tasnim Ur Rahman**
